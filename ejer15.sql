@@ -3,13 +3,13 @@ DROP TABLE IF EXISTS passengers;
 
 CREATE TABLE passports
 (
-	id INT,
+    id INT,
     f_vto DATE
 );
 
 CREATE TABLE passengers
 (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     idNac TINYINT,
     name VARCHAR(10),
     age TINYINT UNSIGNED
@@ -17,7 +17,7 @@ CREATE TABLE passengers
 
 INSERT INTO passengers (idNac, name, age)
 VALUES (1, 'Bob', 21),
-	   (1, 'Sam', 19),
+       (1, 'Sam', 19),
        (2, 'Jill', 18),
        (3, 'Jim', 21),
        (4, 'Sally', 19),
@@ -26,7 +26,7 @@ VALUES (1, 'Bob', 21),
        
 INSERT INTO passports (id, f_vto)
 VALUES (1, '2023-10-1'),
-	   (2, '2025-5-22'),
+       (2, '2025-5-22'),
        (5, '2023-1-22'),
        (6, '2028-6-15');
 
@@ -39,7 +39,7 @@ BEGIN
 		IF (SELECT pp.id FROM passports pp WHERE pp.id = id) THEN
 			DELETE FROM passports pp WHERE pp.id = id;
 		END IF;
-        SELECT 0;
+        	SELECT 0;
 	ELSE
 		SELECT -1;
     END IF;
